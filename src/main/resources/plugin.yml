@@ -1,0 +1,6 @@
+name: FloatingKills
+version: "1.0"
+api: ["1.0.0"]
+author: AlbanW
+description: Plugin to see kills on scoreboard
+main: com.floatingkills.Loader
