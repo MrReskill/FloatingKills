@@ -71,7 +71,8 @@ public class ParticleScheduler extends PluginTask {
                 .putFloat(Entity.DATA_SCALE, 0.0001f);
         pk.item = Item.get(Item.AIR);
         pk.username = name;
-        Server.broadcastPacket(Loader.getLoader().getServer().getLevelByName(Loader.pluginConfig.getString("floatingLocation.world")).getPlayers().values(), pk);
+        for (Player p : Server.getInstance().getOnlinePlayers().values())
+            if(p.getLevel() == Server.getInstance().getDefaultLevel()) p.dataPacket(pk);
     }
 
 
